@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs,  addDoc } from "firebase/firestore";
 import { db } from "../../firebase";
 import "../../App.css";
 import {
@@ -41,6 +41,23 @@ const BodyHomepage = () => {
     setOpenModal(true);
   };
 
+
+  const addToCart = async (book) => {
+    try {
+      // Check if PdfUrl is present in the book object and has a valid value
+      if (book) {
+        const sampleCollection = collection(db, "Sample"); // Replace "Sample" with your actual collection name
+        await addDoc(sampleCollection, book);
+        console.log("Book added to cart:", book);
+      } else {
+        console.error("PdfUrl is missing or invalid in the book object:", book);
+      }
+    } catch (error) {
+      console.error("Error adding book to cart:", error);
+    }
+  };
+  
+
   useEffect(() => {
     const getBooks = async () => {
       try {
@@ -56,7 +73,7 @@ const BodyHomepage = () => {
             const BookData = DataBooks.docs.map((bookDoc) => ({
               ...bookDoc.data(),
               id: bookDoc.id,
-              PdfUrl: bookDoc.data().PdfUrl,
+              
             }));
             return BookData;
           } catch (error) {
@@ -73,6 +90,7 @@ const BodyHomepage = () => {
     };
     getBooks();
   }, []);
+
 
   return (
     <>
@@ -225,7 +243,10 @@ const BodyHomepage = () => {
                             <BiBookReader className="lg:text-2xl md:text-3xl " />
                             Read Now
                           </button>
-                          <button className="gap-x-1 p-1 lg:w-52 max-sm:w-32 rounded-xl bg-gray-500 flex items-center justify-center text-white text-xl whitespace-nowrap hover:bg-gray-800">
+                          <button
+                            className="gap-x-1 lg:p-1 lg:w-52 max-sm:w-32 rounded-xl bg-gray-500 flex items-center text-white whitespace-nowrap hover:bg-gray-800"
+                            onClick={() => addToCart(data)}
+                          >
                             <BiSolidCartAdd className="lg:text-2xl md:text-3xl " />
                             Add to Cart
                           </button>

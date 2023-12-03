@@ -26,7 +26,7 @@ const HeadCategory = () => {
         <div className="flex w-[100%] hover:duration-200 max-lg:hidden justify-evenly">
           {/* desktop mode */}
           <div className="uppercase">
-            <ul className="flex hover:text-gray-300 flex hover:scale-110">
+            <ul className=" hover:text-gray-300 flex hover:scale-110">
               <Link
                 to={"/allGen"}
                 className="border-double border-4 border-[#AAACA6] whitespace-nowrap bg-white rounded-2xl shadow-xl px-1 py-1 text-gray-500 font-bold lg:text-3xl hover:text-cyan-700 "
@@ -85,7 +85,7 @@ const HeadCategory = () => {
             className={
               cate
                 ? "fixed left-[100%] "
-                : "fixed left-[5%] md:flex whitespace-nowrap duration-300 relative \
+                : "left-[5%] md:flex whitespace-nowrap duration-300 relative \
                 md:w-[80%] md:justify-between sm:w-[80%] max-sm:w-[80%]"
             }
           >
@@ -97,7 +97,7 @@ const HeadCategory = () => {
             <ul className="mt-1 space-x-3 max-sm:w-fit max-sm:flex max-sm:flex-wrap relative">
               <Link
                 to={"/bacII"}
-                className="sm:text-sm md:text-md sm:text-sm xs:text-sm rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900"
+                className=" md:text-md sm:text-sm xs:text-sm rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900"
               >
                 BacII Exam
               </Link>
