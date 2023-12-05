@@ -244,7 +244,7 @@ const BodyHomepage = () => {
                             Read Now
                           </button>
                           <button
-                            className="gap-x-1 lg:p-1 lg:w-52 max-sm:w-32 rounded-xl bg-gray-500 flex items-center text-white whitespace-nowrap hover:bg-gray-800"
+                            className="gap-x-1 lg:p-1 lg:w-52 max-sm:w-32 active:bg-blue-600 rounded-xl bg-gray-500 flex items-center text-white whitespace-nowrap hover:bg-gray-800"
                             onClick={() => addToCart(data)}
                           >
                             <BiSolidCartAdd className="lg:text-2xl md:text-3xl " />
