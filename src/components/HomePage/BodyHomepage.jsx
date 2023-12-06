@@ -18,6 +18,7 @@ const BodyHomepage = () => {
   const [detailIndex, setDetailIndex] = useState(0);
   const [openModal, setOpenModal] = useState(false);
   const [readBook, setReadBook] = useState(false);
+  
 
   const slideNext = () => {
     const lastIndex = BookData.length - 1;

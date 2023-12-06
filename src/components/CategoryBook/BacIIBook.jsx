@@ -6,6 +6,7 @@ const BacIIBook = () => {
   const [bacData, setBacData] = useState([]);
   const [bacBooks, setBacBooks] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
+  
   const itemsPerPage = 8; // Number of items to display per page
 
   useEffect(() => {
@@ -64,7 +65,7 @@ const BacIIBook = () => {
 
   return (
     <section className="container mx-auto mt-8">
-      <div className="text-center mb-8">
+      <div className="ml-20 mb-8">
         <h1 className="text-4xl uppercase font-bold hover:text-cyan-800 rounded-xl">
           BacII
         </h1>
