@@ -22,6 +22,7 @@ import ComicBook from "./components/CategoryBook/ComicBook";
 import NovelBook from "./components/CategoryBook/NovelBook";
 import StudyBook from "./components/CategoryBook/StudyBook";
 import { Footer } from "./Footer/Footer";
+import AllCategory from "./components/CategoryBook/AllCategory";
 
 const App = ({ children }) => {
   return (
@@ -36,6 +37,7 @@ const App = ({ children }) => {
         <Route path="/account" element={<AccountPage />}></Route>
         <Route path="/cart" element={<CartPage />}></Route>
         <Route path="/register" element={<RegisterPage />}></Route>
+        <Route path="/allcategory" element={<AllCategory/>}></Route>
         <Route path="/allgen" element={<AllgenBook />}></Route>
         <Route path="/bacII" element={<BacIIBook />}></Route>
         <Route path="/comic" element={<ComicBook />}></Route>
