@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { collection, getDocs, query } from 'firebase/firestore';
 import { db } from '../../firebase';
 
+
+
 const AllCategory = () => {
   const [allBooks, setAllBooks] = useState([]);
 
